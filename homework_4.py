@@ -22,7 +22,6 @@ def parse_input(user_input: str):
         return "", []
     return cmd, args
 
-contacts = defaultdict(dict)
 
 @input_error
 def add_contact(args, contacts):
@@ -58,6 +57,10 @@ def show_all(contacts):
 
 def main():
     """Основна функція для бота-помічника."""
+
+    # Створюємо словник для зберігання контактів всередині main()
+    contacts = {} 
+
     print("Welcome to the assistant bot!")
     while True:
         user_input = input("Enter a command: ")

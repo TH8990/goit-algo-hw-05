@@ -6,11 +6,12 @@ def generator_numbers(text: str):
     Генерує числа з плаваючою точкою з рядка.
     """
     # Регулярний вираз для пошуку чисел, розділених пробілами.
-    pattern = r'\b\d+\.\d+\b' 
+    pattern = r'\s\d+\.\d+\s' # Замість r'\b\d+\.\d+\b' 
     numbers_as_strings = re.findall(pattern, text)
     
     for num_str in numbers_as_strings:
-        yield float(num_str)
+        # Видаляємо пробіли, які знайшов findall, і перетворюємо на float.
+        yield float(num_str.strip())
 
 def sum_profit(text: str, func: Callable):
     """

@@ -6,7 +6,7 @@ def generator_numbers(text: str):
     Генерує числа з плаваючою точкою з рядка.
     """
     # Регулярний вираз для пошуку чисел, розділених пробілами.
-    pattern = r'\s\d+\.\d+\s' # Замість r'\b\d+\.\d+\b' 
+    pattern = r'\ \d+\.\d+\ ' # Замість r'\b\d+\.\d+\b' 
     numbers_as_strings = re.findall(pattern, text)
     
     for num_str in numbers_as_strings:
